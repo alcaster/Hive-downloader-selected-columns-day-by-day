@@ -32,7 +32,7 @@ func downloadSingleCsv(host string, csvFilename string, to string) () {
 		log.Errorf("Didn't downloaded %s, error: %v", file, err)
 		return
 	}
-	fmt.Println("Succesfully downloaded csv: " + csvFilename)
+	log.Info("Succesfully downloaded csv: " + csvFilename)
 
 }
 func deleteRemoteCsv(host string, csvFilename string) () {
@@ -46,5 +46,5 @@ func deleteRemoteCsv(host string, csvFilename string) () {
 		log.Errorf("Didn't removed %s, error: %v", csvFilename, err)
 		return
 	}
-	log.Infof("Successfully removed csv %s from the server\n", csvFilename)
+	log.Infof("Successfully removed csv %s from the server", csvFilename)
 }

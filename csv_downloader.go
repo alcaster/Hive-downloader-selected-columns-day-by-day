@@ -26,11 +26,11 @@ func argParser() (string, []string, time.Time, time.Time, string, string) {
 	to := flag.String("to", "DIR", "Directory where downloaded files should be stored")
 	startDateStr := flag.String("start-date", "1.09.2017", "from when download")
 	endDateStr := flag.String("end-date", "1.11.2017", "to when download")
+	flag.Parse()
 
 	layout := "2.01.2006"
 	startDate, _ := time.Parse(layout, *startDateStr)
 	endDate, _ := time.Parse(layout, *endDateStr)
 	columnsArrays := strings.Split(*columns, " ")
-	flag.Parse()
 	return *host, columnsArrays, startDate, endDate, *tablename, *to
 }
